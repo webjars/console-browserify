@@ -18,7 +18,7 @@
 
     <licenses>
         <license>
-            <name>Copyright (c) 2012 Raynos</name>
+            <name>MIT</name>
             <url>https://github.com/substack/console-browserify/blob/master/LICENCE</url>
             <distribution>repo</distribution>
         </license>
@@ -68,8 +68,8 @@
                 </executions>
             </plugin>
 
-          <plugin>
-            <artifactId>maven-antrun-plugin</artifactId>
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
                 <version>1.7</version>
                 <executions>
                     <execution>
@@ -93,13 +93,26 @@
                         </configuration>
                     </execution>
                 </executions>
-          </plugin>
+            </plugin>
 
-          <plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
                 <version>2.3.2</version>
             </plugin>
+
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.5.1</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <serverId>sonatype-nexus-staging</serverId>
+                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
 
