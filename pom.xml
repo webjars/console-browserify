@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>console-browserify</artifactId>
-    <version>0.1.6-SNAPSHOT</version>
+    <version>0.1.6</version>
     <name>console-browserify</name>
     <description>WebJar for console-browserify</description>
     <url>http://webjars.org</url>
@@ -28,7 +28,7 @@
         <url>http://github.com/webjars/console-browserify</url>
         <connection>scm:git:https://github.com/webjars/console-browserify.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/console-browserify.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>console-browserify-0.1.6</tag>
     </scm>
 
     <developers>
@@ -79,14 +79,13 @@
                         </goals>
                         <configuration>
                             <target>
-                                <echo message="unzip archive"/>
-                                <unzip src="${project.build.directory}/v${upstreamVersion}.zip"
-                                       dest="${project.build.directory}"/>
+                                <echo message="unzip archive" />
+                                <unzip src="${project.build.directory}/v${upstreamVersion}.zip" dest="${project.build.directory}" />
 
-                                <echo message="moving resources"/>
+                                <echo message="moving resources" />
                                 <move todir="${destDir}/node_modules/console-browserify">
                                     <fileset dir="${extractDir}">
-                                        <include name="index.js"/>
+                                        <include name="index.js" />
                                     </fileset>
                                 </move>
                             </target>
